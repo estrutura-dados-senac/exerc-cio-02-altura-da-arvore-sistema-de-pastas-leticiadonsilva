@@ -1,0 +1,31 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Valida classe Ex01AlturaDaArvore
+      id: valida-classe-ex01alturadaarvore
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Valida classe Ex01AlturaDaArvore
+        setup-command: ''
+        command: ' test -f Ex01AlturaDaArvore.java && grep -Eq "(^|[[:space:]])class[[:space:]]+Ex01AlturaDaArvore([[:space:]]|\{)"
+          Ex01AlturaDaArvore.java && javac Ex01AlturaDaArvore.java'
+        timeout: 10
+        max-score: 7
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        VALIDA-CLASSE-EX01ALTURADAARVORE_RESULTS: "${{steps.valida-classe-ex01alturadaarvore.outputs.result}}"
+      with:
+        runners: valida-classe-ex01alturadaarvore
