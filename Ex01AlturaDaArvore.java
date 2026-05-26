@@ -14,7 +14,6 @@
                 if (raiz == null) {
                     return -1;
                 }
-                // a
 
                 int alturaEsquerda = altura(raiz.left);
                 int alturaDireita = altura(raiz.right);
