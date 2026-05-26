@@ -24,8 +24,8 @@ jobs:
         timeout: 10
         max-score: 7
     - name: Autograding Reporter
-  uses: classroom-resources/autograding-grading-reporter@v1.1
-  env:
-    VALIDA-CLASSE-EX01ALTURADAARVORE_RESULTS: "${{steps.valida-classe-ex01alturadaarvore.outputs.result}}"
-  with:
-    runners: valida-classe-ex01alturadaarvore
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        VALIDA-CLASSE-EX01ALTURADAARVORE_RESULTS: "${{steps.valida-classe-ex01alturadaarvore.outputs.result}}"
+      with:
+        runners: valida-classe-ex01alturadaarvore
