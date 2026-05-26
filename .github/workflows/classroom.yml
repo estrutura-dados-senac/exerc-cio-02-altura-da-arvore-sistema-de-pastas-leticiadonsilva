@@ -23,8 +23,8 @@ jobs:
           Ex01AlturaDaArvore.java && javac Ex01AlturaDaArvore.java'
         timeout: 10
         max-score: 7
-- name: Autograding Reporter
-uses: classroom-resources/autograding-grading-reporter@v2
+    - name: Autograding Reporter
+  uses: classroom-resources/autograding-grading-reporter@v1.1
   env:
     VALIDA-CLASSE-EX01ALTURADAARVORE_RESULTS: "${{steps.valida-classe-ex01alturadaarvore.outputs.result}}"
   with:
