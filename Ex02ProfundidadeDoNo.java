@@ -1,4 +1,4 @@
-    public class Ex02Profundidade {
+    public class Ex02ProfundidadeDoNo {
 
 
         static class No{
