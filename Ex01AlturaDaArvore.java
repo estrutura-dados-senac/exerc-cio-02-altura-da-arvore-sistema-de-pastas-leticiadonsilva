@@ -34,6 +34,6 @@
             public static void main(String[] args) {
                 Node raiz = exemploPastas();
 
-                System.out.println("Altura da arvore: " + altura(raiz));
+                System.out.println("altura da arvore: " + altura(raiz));
             }
         }
