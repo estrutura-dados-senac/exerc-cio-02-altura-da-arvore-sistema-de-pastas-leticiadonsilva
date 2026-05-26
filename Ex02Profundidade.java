@@ -42,6 +42,7 @@
                 return profundidadeAuxiliar(atual.direita, alvo, nivel + 1);
             }
 
+            // aa
 
             public static void main(String[] args) {
 
